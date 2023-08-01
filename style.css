@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register_form {
+    max-width: 850px;
+}
+
+.login_form {
+    max-width: 550px;
+}
+
+@media (max-width: 500px) {
+    #carouselExampleFade img {
+        width: 60%;
+        height: 250px;
+    }
+}
+
+.input {
+    width: 100%;
+}
+
+#event_container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.eventCard{
+    position: relative;
+    padding: 3px 6px 0px 6px ;
+    margin: 10px;
+    border-radius: 8px;
+    border:  1px solid #000000;
+    height: 360px;
+    width: 420px;
+    overflow: hidden;
+}
+
+.eventCard img{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #ccc;
+    height: 230px;
+    width: 100%;
+}
+
+.deletBtn{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Event Planner</title>
+</head>
+
+<body>
+
+  <!-------------------------- Navbar Code Start ---------------------->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"> Event Planner </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li> -->
+          <li class="nav-item">
+            <a id="event" class="nav-link" href="#">Event</a>
+          </li>
+          <li class="nav-item">
+            <a id="create_event" class="nav-link" href="#">Create Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+
+        <form class="d-flex">
+          <input id="navbar_input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <!-- <button class="btn btn-outline-success rounded" type="submit"><i -->
+          <!-- class="fa-solid fa-magnifying-glass"></i></button>&nbsp;&nbsp; -->
+        </form>
+        <div class="my-3 me-2">
+          <button id="logout" class="btn btn-outline-success rounded-pill p-2" type="submit">Logout</button>
+        </div>
+
+        <div class="my-3 me-2">
+          <button id="form_display" class="btn btn-outline-success rounded-pill p-2" type="submit">
+            Register / Login
+          </button>
+        </div>
+        <div style="display: none;">
+          <img id="user_img_navbar" src="" height="40px" width="40px" class="border rounded-circle" alt="">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-------------------------- Navbar Code End ---------------------->
+
+
+
+  <!------------------------------ Register form start -------------------->
+  <div style="display: none; " id="register_form"
+    class="register_form container rounded border border-success bg-light mt-1 p-3">
+    <div class="text-success text-end fs-3">
+      <span id="cancel_register_btn"><i class="fa-regular fa-circle-xmark"></i> </span>
+    </div>
+    <div class="">
+      <div class="text-center text-success">
+        <h2><u>Register Now</u></h2>
+      </div>
+    </div>
+    <div class=" d-flex  align-items: center; justify-content: space-around;">
+      <div class="w-100 ">
+        <form action="">
+          <div class="mt-4">
+            <label for="">Username:</label>
+            <div class="d-flex align-items: center; justify-content: center;">
+              <span class="bg-success border text-white rounded border-ligth p-2">
+                <i class="fa-solid fa-user"></i>
+              </span>
+              <input id="user_name" class="form-control" type="text" placeholder="Username" required>
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="">Email:</label>
+            <div class="d-flex align-items: center; justify-content: center;">
+              <span class="bg-success border border-ligth text-white rounded p-2">
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              <input id="register_email" class="form-control" type="email" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="mt-3">
+            <label for="">Password:</label>
+            <div class="d-flex align-items: center; justify-content: center;">
+              <span class="bg-success border border-ligth text-white rounded p-2">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+              <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+            </div>
+          </div>
+
+        </form>
+        <div class="my-3">
+          <input type="checkbox">
+          <span>I accept all terms & condition</span>
+        </div>
+      </div>
+
+
+      <div style="margin-left: 13%; display: flex; justify-content:center; align-items: center;">
+        <div>
+          <label for="">Upload Picture:</label>
+          <div>
+            <img id="user_img" src="" width="120px" height="120px" alt="">
+          </div>
+          <br>
+          <div>
+            <input id="user_img_input" type="file" required>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center">
+      <button id="register_btn" class="btn bg-success text-white rounded mt-3 p-2 w-50" type="submit"><b>Register
+          Now</b></button>
+    </div>
+    <div class="mt-2 text-center">
+      <p>Already have an account? <span id="login_now" role="button" class="text-success">Login Now</span> </p>
+    </div>
+  </div>
+
+  <!----------------------------- Register form end ------------------------->
+
+
+
+
+  <!---------------------------- login form start -------------------------->
+
+  <div style="display: none;" id="login_form"
+    class="login_form container rounded border border-success w-75 bg-light mt-1 p-3">
+    <div class="text-success text-end fs-3">
+      <span id="cancel_login_btn"><i class="fa-regular fa-circle-xmark"></i> </span>
+    </div>
+    <div class="">
+      <div class="text-center text-success">
+        <h2><u>Login Now</u></h2>
+      </div>
+      <form action="">
+        <div class="mt-4">
+          <label for="">Email:</label>
+          <div class="d-flex align-items: center; justify-content: center;">
+            <span class="bg-success border border-ligth text-white rounded p-2">
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            <input id="login_email" class="form-control" type="email" placeholder="Email" aria-label="Email" required>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="">Password:</label>
+          <div class="d-flex align-items: center; justify-content: center;">
+            <span class="bg-success border border-ligth text-white rounded p-2">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <input id="login_password" class="form-control" type="password" placeholder="Password" aria-label="Password"
+              required>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="">Comfirm Password:</label>
+          <div class="d-flex align-items: center; justify-content: center;">
+            <span class="bg-success border border-ligth text-white rounded p-2">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <input id="comfirm_login_password" class="form-control" type="password" placeholder="Comfirm Password"
+              aria-label="Password" required>
+          </div>
+        </div>
+      </form>
+      <div class="my-3">
+        <input type="checkbox">
+        <span>Remember me</span>
+      </div>
+      <div class="text-center">
+        <button id="login_btn" class="btn bg-success text-white rounded mt-3 p-2 w-50" type="submit"><b>Login
+            Now</b></button>
+      </div>
+      <div class="mt-2 text-center">
+        <p>Don't have an account? <span id="register_now" role="button" class="text-success">Register Now</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------------------- login form end ------------------------------>
+
+
+  <!-------------------------------- slider code start --------------------------->
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/picture1.jpg" height="520px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/picture2.jpg" height="520px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/picture3.jpg" height="520px" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-------------------------------- slider code end --------------------------->
+
+  <!-------------------------------- Event Card code start ------------------------->
+
+  <div id="event_container" class="container">
+  </div>
+
+  <!-------------------------------- Event Card code end --------------------------->
+
+
+
+
+  <!-------------------------- Book Event Form  Strat code ------------------------->
+
+  <div style="display: none;" id="event_form"
+    class="create_event container border border-success bg-light w-50 mt-2 p-3 mb-5">
+    <div class="text-success text-end fs-3">
+      <span id="cancel_event_form"><i class="fa-regular fa-circle-xmark"></i> </span>
+    </div>
+    <div class="bg-light border border-3 border-top-0 border-end-0 border-start-0">
+      <h2 class="f-s-4 text-center text-success"><b>Create Event</b></h2>
+    </div>
+
+    <div class="container">
+      <form id="eventForm">
+        <br>
+        <label for="eventPicture">Upload Event Picture:</label>
+        <img id="eventPicture" src="" class="w-100" height="180px" alt=""> <br><br>
+        <input class="w-100" type="file" id="eventPicture" name="eventInput" accept="image/*" required>
+
+        <label for="eventName" class="mt-3">Event Name:</label>
+        <input class="w-100 p-2" placeholder="Event name" type="text" id="eventName" name="eventName" required>
+
+        <label for="numOfPeople" class="mt-3">Number of People:</label>
+        <input class="input p-2 w-100" type="" id="numOfPeople" name="numOfPeople" required>
+
+        <label for="location" class="mt-3">Location:</label>
+        <input class="input p-2 w-100" type="text" id="location" name="location" required>
+
+        <label for="startDate" class="mt-3">Start Date:</label>
+        <input class="input p-2" type="date" id="startDate" name="startDate" required>
+
+        <label for="endDate" class="mt-3">End Date:</label>
+        <input class="input p-2" type="date" id="endDate" name="endDate" required>
+
+
+        <label for="startTime" class="mt-3">Start Time:</label>
+        <input class="input p-2" type="time" id="startTime" name="startTime" required>
+
+        <label for="endTime" class="mt-3">End Time:</label>
+        <input class="input p-2" type="time" id="endTime" name="endTime" required>
+
+
+        <label for="eventDescription" class="mt-3">Event Description:</label>
+        <textarea class="w-100 " id="eventDescription" name="eventDescription" rows="4" required></textarea>
+
+        <br>
+        <!-- <input type="submit" value="Create Event"> -->
+        <div class="text-center mt-3">
+          <button id="submitEvent" class="btn btn-outline-success rounded-pill p-2 w-50" type="submit">Submit
+            Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
